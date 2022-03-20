@@ -137,7 +137,18 @@
   </header>
   <div class="root">
     <h1>Hello World</h1>
-    
+    <amp-list width="auto" height="100" layout="fixed-height"
+      src="https://xwu6-duwo-frcu.n7.xano.io/api:iFbkL7ei/get-all-posts" items="items.items">
+      <template type="amp-mustache">
+
+        <div class="url-entry">
+          <a href="{{url}}">{{title}}</a>
+          {{#description}}
+        </div>
+        This post is live
+  </div>
+  </template>
+  </amp-list>
   Why is no list rednering?
  
   </root>
