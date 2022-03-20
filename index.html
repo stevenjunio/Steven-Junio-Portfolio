@@ -7,29 +7,31 @@
   <meta name="description" content="This is the AMP Boilerplate." />
   <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <!-- Import other AMP Extensions here -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+
   <script custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async></script>
 
   <style amp-custom>
     /* Add your styles here */
     body {
       margin: auto;
+      display: flex;
+      flex-direction: column;
 
     }
 
-    .root {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
+    #mainContainer {
+     
+      padding: 20px
     }
 
     header {
       background-color: #f1f1f1;
-      padding: 20px;
       text-align: center;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      padding-top: 10px;
     }
 
     .logo {
@@ -41,7 +43,6 @@
       background-color: #f1f1f1;
       padding: 20px;
       text-align: center;
-      position: fixed;
       bottom: 0;
       width: 100%;
     }
@@ -135,31 +136,19 @@
       <a href="/python/">Python</a>
     </nav>
   </header>
-  <div class="root">
-    <h1>Hello World</h1>
-    <amp-list width="auto" height="100" layout="fixed-height"
-      src="https://xwu6-duwo-frcu.n7.xano.io/api:iFbkL7ei/get-all-posts" items="items.items">
-      <template type="amp-mustache">
 
-        <div class="url-entry">
-          <a href="{{url}}">{{title}}</a>
-          {{#description}}
-        </div>
-        This post is live
+  <div id="mainContainer">
+  <amp-list layout="fixed-height" height="200" src="https://xwu6-duwo-frcu.n7.xano.io/api:iFbkL7ei/get-all-posts"
+    items="posts.items">
+    <template type="amp-mustache">
+
+      <div class="url-entry">
+        <a href="{{url}}">{{title}}</a>
+      </div>
+      This post is live
+    </template>
   </div>
-  </template>
-  </amp-list>
-  Why is no list rednering?
- 
-  </root>
-  <footer>
-    <p>
-      &copy; 2020
-      <a href="https://www.linkedin.com/in/joseph-m-carlson-a8a9b9b6/">
-        Steven Junio
-      </a>
-    </p>
-  </footer>
+    
 </body>
 
 </html>
