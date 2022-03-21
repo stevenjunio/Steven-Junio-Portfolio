@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    .pageLayout {
+      background-color: aqua;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+
+    }
+  </style>
+  <body>
+    <div class="pageLayout">
+      
+
+      <h1>CDN div</h1>
+      <h2>div2</h2>
+      <h2>div3</h2>
+      <h2>div4</h2>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBihRuBy_mXY3PEuGdmwuwoWFVKeM4IfGE",
+        authDomain: "outskirts-nextjs.firebaseapp.com",
+        projectId: "outskirts-nextjs",
+        storageBucket: "outskirts-nextjs.appspot.com",
+        messagingSenderId: "243872594115",
+        appId: "1:243872594115:web:d1ad8b9ec55d8d505b4a76",
+        measurementId: "G-3ZW8LHZX6V",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</head>
