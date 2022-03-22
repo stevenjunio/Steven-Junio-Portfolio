@@ -1,154 +1,27 @@
 <!DOCTYPE html>
-<html ⚡>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="description" content="This is the AMP Boilerplate." />
-  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- Import other AMP Extensions here -->
-  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-
-  <script custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async></script>
-
-  <style amp-custom>
-    /* Add your styles here */
-    body {
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-
-    }
-
-    #mainContainer {
-     
-      padding: 20px
-    }
-
-    header {
-      background-color: #f1f1f1;
-      text-align: center;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-    }
-
-    .logo {
-      width: 150px;
-      padding-bottom: 10px;
-    }
-
-    footer {
-      background-color: #f1f1f1;
-      padding: 20px;
-      text-align: center;
-      bottom: 0;
-      width: 100%;
-    }
-
-    amp-list div[role='list'] {
+  <style>
+    .pageLayout {
+      background-color: aqua;
       display: grid;
-      grid-gap: 0.5em;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+
     }
   </style>
-  <style amp-boilerplate>
-    body {
-      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-    }
-
-    @-webkit-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-moz-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-ms-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-o-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-  </style>
-  <noscript>
-    <style amp-boilerplate>
-      body {
-        -webkit-animation: none;
-        -moz-animation: none;
-        -ms-animation: none;
-        animation: none;
-      }
-    </style>
-  </noscript>
-
-  <link rel="canonical" href="." />
-  <title>My AMP Page</title>
-</head>
 
 <body>
-  <header>
+  <div class="pageLayout">
 
-    <img class="logo" src="images/logo.svg" alt="The Logo" width="80%">
-    <nav>
-      <a href="/html/">HTML</a> |
-      <a href="/css/">CSS</a> |
-      <a href="/js/">JavaScript</a> |
-      <a href="/python/">Python</a>
-    </nav>
-  </header>
 
-  <div id="mainContainer">
-  <amp-list layout="fixed-height" height="200" src="https://xwu6-duwo-frcu.n7.xano.io/api:iFbkL7ei/get-all-posts"
-    items="posts.items">
-    <template type="amp-mustache">
-
-      <div class="url-entry">
-        <a href="{{url}}">{{title}}</a>
-      </div>
-      This post is live
-    </template>
+    <h1>CDN back to having a public div</h1>
+    <h2>div2</h2>
+    <h2>div3</h2>
+    <h2>div4</h2>
   </div>
-    
-</body>
 
-</html>
+ 
+</body>
+</head>
