@@ -21,12 +21,14 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: #2e282aff   0px 0px 10px;
+    min-width: 100px;
 
 }
 
 .projectImage {
     width: 100%;
     height: auto;
+    height: 100%;
 
 
 
