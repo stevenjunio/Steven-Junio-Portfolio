@@ -4,7 +4,7 @@ console.log(msg);
 let checkImage = (image) => {
   if (image != null) {
     console.log(image.path + "image");
-    return `<img class ="projectImage" height ="${image.meta.height}" width="${image.meta.width}" src ="https://xwu6-duwo-frcu.n7.xano.io` + `${image.path}"></img>`;
+    return `<img class ="projectImage" height ="${image.meta.height}" width="${image.meta.width}" src ="https://steven-junio.mo.cloudinary.net` + `${image.path}"></img>`;
     } else {
       return "";
     }
