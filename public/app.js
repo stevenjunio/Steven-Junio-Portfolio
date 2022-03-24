@@ -26,9 +26,9 @@ fetch("https://xwu6-duwo-frcu.n7.xano.io/api:YOmsVTXu/project").then(
            
           `<div class="projectTitle" > ` +
           project.Name +
-          "</div>" +
-          project.Description +
-          ` < /div>`;
+          "</div>" + '<div class="projectDescription">' +
+          project.Description
+         
       }
     })
 );
