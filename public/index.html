@@ -35,6 +35,11 @@
   <script>
     uploadImage = (img) => {
       var myHeaders = new Headers();
+      myHeaders.append("Access-Control-Allow-Origin", "*");
+      myHeaders.append("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
+      myHeaders.append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+
+
       myHeaders.append("Authorization", "Bearer H2qKBBBrZsaKWfZmuaJlPBngaqj1hs285bThRK32");
       myHeaders.append("Cookie", "__cflb=0H28vgHxwvgAQtjUGU56Rb8iNWZVUvXhoTX1HEcmjAd; __cfruid=7a04a038869e2ace5bfe40c581292745947aa70a-1648644141");
       let fileInput = document.body.getElementsByClassName('fileInput');
@@ -47,12 +52,11 @@
       var requestOptions = {
         method: 'POST',
         headers: myHeaders,
-        body: formdata,
-        redirect: 'follow',
-        
+        body: formdata
+
       };
 
-      fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v1", requestOptions)
+      fetch("http://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v1", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
