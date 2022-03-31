@@ -35,8 +35,10 @@
   <script>
     uploadImage = (img) => {
       var myHeaders = new Headers();
-      myHeaders.append("Authorization", "Bearer H2qKBBBrZsaKWfZmuaJlPBngaqj1hs285bThRK32");
-      
+      myHeaders.append("Authorization", "Bearer H2qKBBBrZsaKWfZmuaJlPBngaqj1hs285bThRK32"),
+      myHeaders.append("mode", "no-cors"),
+      myHeaders.append("Cookie", "__cflb=0H28vgHxwvgAQtjUGU56Rb8iNWZVUvXhbBjA6oUpim3; __cfruid=895ce7ea4e47d42c4843466de5cdfe2df732c5fb-1648737312");
+
       let fileInput = document.body.getElementsByClassName('fileInput');
       fileInput = fileInput[0].files[0];
 
@@ -47,10 +49,10 @@
       var requestOptions = {
         method: 'POST',
         headers: myHeaders,
-        body: formdata
+        redirect: 'follow'
       };
 
-      fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v1",
+      fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v2/direct_upload",
           requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
