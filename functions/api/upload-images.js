@@ -10,5 +10,26 @@ export async function onRequest(context) {
     } = context;
     let theDay = 45
   
-    return new Response(theDay);
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer H2qKBBBrZsaKWfZmuaJlPBngaqj1hs285bThRK32");
+    myHeaders.append("Cookie", "__cflb=0H28vgHxwvgAQtjUGU4vq74ZFe3sNVUZdBBHjqvtpq3; __cfruid=8dda362d2cb9c479fc381f3bebe375f263a60040-1649190981");
+    
+    var formdata = new FormData();
+    formdata.append("file", fileInput.files[0], "[PROXY]");
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+    
+    fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v1", requestOptions)
+      .then(response => response.text())
+      .then(result => {
+          let theResult = result
+      })
+      .catch(error => console.log('error', error));
+    
+    return new Response(result);
   }
