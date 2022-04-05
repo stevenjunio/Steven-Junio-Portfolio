@@ -12,5 +12,5 @@ export async function onRequest(file, context) {
     console.log(file);
   
     
-    return new Response(theResult);
+    return new Response('theResult');
   }
