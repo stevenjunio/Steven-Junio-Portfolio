@@ -27,7 +27,7 @@
       <input type="file" accept="image/*" class="fileInput">
       <br>
 
-      <button type="button" onclick="uploadImage()" >Upload</button>
+      <button type="button" onclick="uploadImage()">Upload</button>
 
       </input>
     </form>
@@ -44,17 +44,32 @@
     uploadImage = (img) => {
       console.log('submitted')
 
-
+      var formdata = new FormData();
+      formdata.append("location", "Tulare, ca");
+      formdata.append("itemNumber", "267");
 
       var requestOptions = {
         method: 'POST',
         redirect: 'follow'
+
       };
 
-      fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v2/direct_upload",
+      fetch("https://xwu6-duwo-frcu.n7.xano.io/api:ccLM-ATF/direct-creator-upload",
         requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+
+        .then(result => {
+          result.text().then(text => {
+            let imageUrl = text
+            console.log(imageUrl.replace('"', '').replace('"', ''))
+          })
+          
+         
+         
+
+            .catch(error => console.log('error', error));
+
+        }
+        )
         .catch(error => console.log('error', error));
     };
 
