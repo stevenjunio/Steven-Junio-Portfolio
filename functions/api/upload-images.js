@@ -23,13 +23,13 @@ export async function onRequest(context) {
       body: formdata,
       redirect: 'follow'
     };
-    
+    let theResult
     fetch("https://api.cloudflare.com/client/v4/accounts/19eab9e3016e1c72ff6165fd881e5932/images/v1", requestOptions)
       .then(response => response.text())
       .then(result => {
-          let theResult = result
+        theResult = result
       })
       .catch(error => console.log('error', error));
     
-    return new Response(result);
+    return new Response(theResult);
   }
