@@ -13,5 +13,5 @@ export async function onRequest(context: any, file: File) {
 
 
 
-    return new Response('Hello, world!');
+    return new Response('Hello, world! today`s date is ' + new Date().toISOString());
   }
