@@ -20,78 +20,13 @@
     <div class="callToActionButton">Contact</div>
   </header>
   <div class="pageLayout" id='mainPage'>
-    <h1>CDN back to having a public div</h1>
-    <a href="../functions/api/upload-images.js">Check out the function</a>
-
-
-    <form id="theForm" onsubmit="uploadImage()">
-      <input type="file" accept="image/*" class="fileInput">
-      <br>
-
-      <button type="button" onclick="uploadImage()">Upload</button>
-
-      </input>
-    </form>
-    <br>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="app.js">
+    <h1>The Portfolio</h1>
+    
+  <script src="load-projects.js">
 
   </script>
 
-  <script>
-
-
-    uploadImage = (img) => {
-      console.log('submitted')
-
-      var formdata = new FormData();
-      formdata.append("location", "Tulare, ca");
-      formdata.append("itemNumber", "267");
-
-      var requestOptions = {
-        method: 'POST',
-        redirect: 'follow'
-
-      };
-
-      fetch("https://xwu6-duwo-frcu.n7.xano.io/api:ccLM-ATF/direct-creator-upload",
-        requestOptions)
-
-        .then(result => {
-          result.text().then(text => {
-            let imageUrl = text
-            console.log(imageUrl.replace('"', '').replace('"', ''))
-          })
-          
-         
-         
-
-            .catch(error => console.log('error', error));
-
-        }
-        )
-        .catch(error => console.log('error', error));
-    };
-
-
-  </script>
+  
 
 
   <link rel="stylesheet" href="styles/index.css" defer />
