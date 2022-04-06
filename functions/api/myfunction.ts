@@ -1,5 +1,5 @@
 
-export async function onRequest(context: any) {
+export async function onRequest(context: any, file: File) {
     // Contents of context object
     const {
       request, // same as existing Worker API
@@ -10,5 +10,8 @@ export async function onRequest(context: any) {
       data, // arbitrary space for passing data between middlewares
     } = context;
   
+
+
+
     return new Response('Hello, world!');
   }
