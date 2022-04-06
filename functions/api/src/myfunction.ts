@@ -7,7 +7,7 @@ export async function onRequest(context: any, file: File) {
       params, // if filename includes [id] or [[path]]
       waitUntil, // same as ctx.waitUntil in existing Worker API
       next, // used for middleware or to fetch assets
-      data, // arbitrary space for passing data between middlewares
+      data, // arxbitrary space for passing data between middlewares
     } = context;
   
 
