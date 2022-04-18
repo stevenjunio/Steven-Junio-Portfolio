@@ -6,7 +6,14 @@ body {
     width: 100%;
 
 }
-.uploadButton{
+
+button {
+    border-color: transparent;
+    cursor: pointer;
+
+}
+
+.uploadButton {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -18,11 +25,14 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
+
 .pageLayout {
 
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
+    width: fit-content;
+
 }
 
 .projectContainer {
@@ -31,10 +41,9 @@ body {
     align-self: center;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: #2e282aff   0px 0px 10px;
+    box-shadow: #2e282aff 0px 0px 10px;
     min-width: 300px;
     width: 100%
-
 }
 
 .projectImage {
