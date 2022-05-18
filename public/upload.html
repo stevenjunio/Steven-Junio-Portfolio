@@ -14,6 +14,7 @@
 </form>
 
 <button onclick="uploadImageCF()">Upload Image</button>
+
 <script>
   function uploadImageCF(file, filename) {
     console.log("uploading the" + theFiles.files[0]);
@@ -23,7 +24,6 @@
       "Authorization",
       "Bearer H2qKBBBrZsaKWfZmuaJlPBngaqj1hs285bThRK32"
     );
-    myHeaders.append("mode", "no - cors");
 
     var formdata = new FormData();
     formdata.append("file", theFiles.files[0], "[PROXY]");
@@ -44,3 +44,5 @@
       .catch((error) => console.log("error", error));
   }
 </script>
+
+<script src="../functions/api/uploadImages.js"></script>
