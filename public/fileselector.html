@@ -6,21 +6,19 @@
     <style>
       .bubble-container-element {
         max-width: 600px;
-        min-height: 300px;
-        height: 350px;
         margin: auto;
-        border: 1px solid grey;
+        border: 1px solid lightcoral;
+        height: fit-content;
       }
       .file-selector-container {
-        background-color: lightgrey;
-        height: 100%;
+        background-color: transparent;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin-bottom: 10px;
+        height: 150px;
+        border: 1px solid lightgrey;
+        margin-bottom: 5px;
       }
       .file-selector-label {
         margin: auto;
-
         grid-column: 1/-1;
         grid-row: 1/2;
       }
@@ -37,13 +35,31 @@
         display: flex;
         width: 100%;
         flex-wrap: nowrap;
-        overflow-x: auto;
-        width: fit-content;
+        overflow-x: scroll;
         margin: auto;
+        height: auto;
+        gap: 5px;
       }
       #image-container img {
-        height: 250px;
+        height: 100px;
         cursor: grab;
+        padding: 10px;
+        border: 1px solid grey;
+      }
+
+      .image-group {
+        display: flex;
+      }
+      .delete-button {
+        z-index: 1;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        right: 25;
+        top: 5;
+        content: icon;
+        background-image: url("https://www.svgrepo.com/show/12848/x-symbol.svg");
+        cursor: pointer;
       }
     </style>
     <title>Document</title>
@@ -76,11 +92,27 @@
         reader.readAsDataURL(file);
         reader.addEventListener("load", () => {
           console.log(reader.result);
+
+          let deleteButton = document.createElement("btn");
+          deleteButton.className = "delete-button";
+          deleteButton.addEventListener("click", () => {
+            imageHolder.remove();
+            deleteFile(file);
+
+            console.log();
+          });
+          let imageHolder = document.createElement(`div`);
+          imageHolder.className = "image-group";
+
           let imageElement = document.createElement(`img`);
           imageElement.src = reader.result;
           console.log(file);
 
-          elementToRenderIn.append(imageElement);
+          elementToRenderIn.append(imageHolder);
+
+          imageHolder.append(imageElement);
+          imageHolder.append(deleteButton);
+          console.log(deleteButton);
         });
       }
     }
@@ -92,4 +124,10 @@
   fileInput.addEventListener("change", () =>
     fileRenderer.displayFiles(fileInput.files, imageContainer)
   );
+
+  let deleteFile = (file) => {
+    console.log("deleting the file");
+    console.log(fileInput.files.find());
+    fileInput.files.slice(1, 0);
+  };
 </script>
