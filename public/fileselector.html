@@ -91,31 +91,31 @@
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.addEventListener("load", () => {
-          console.log(reader.result);
-
+          this.savedFiles.push(reader.result);
           let deleteButton = document.createElement("btn");
           deleteButton.className = "delete-button";
           deleteButton.addEventListener("click", () => {
             imageHolder.remove();
-            deleteFile(file);
-
-            console.log();
+            let indexOfElement = this.savedFiles.findIndex(
+              (element) => element == reader.result
+            );
+            this.savedFiles.splice(indexOfElement, 1);
+            console.log(this.savedFiles);
           });
+
           let imageHolder = document.createElement(`div`);
           imageHolder.className = "image-group";
 
           let imageElement = document.createElement(`img`);
           imageElement.src = reader.result;
-          console.log(file);
-
           elementToRenderIn.append(imageHolder);
 
           imageHolder.append(imageElement);
           imageHolder.append(deleteButton);
-          console.log(deleteButton);
         });
       }
     }
+    savedFiles = [];
   }
 
   fileRenderer = new FileRenderer();
@@ -124,10 +124,4 @@
   fileInput.addEventListener("change", () =>
     fileRenderer.displayFiles(fileInput.files, imageContainer)
   );
-
-  let deleteFile = (file) => {
-    console.log("deleting the file");
-    console.log(fileInput.files.find());
-    fileInput.files.slice(1, 0);
-  };
 </script>
